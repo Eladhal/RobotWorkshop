@@ -1,0 +1,31 @@
+<div *ngIf="robotFac">
+  <h2>{{ robotFac.branchName | uppercase }} Details</h2>
+  <div><span>Id: </span>{{robotFac.id}}</div>
+  <div>
+    <label>branchName:
+      <input [(ngModel)]="robotFac.branchName" placeholder="branchName">
+    </label>
+  </div>
+  <div>
+    <label>managerName:
+      <input [(ngModel)]="robotFac.managerName" placeholder="managerName">
+    </label>
+  </div>
+  <div>
+    <label>employees:
+      <input [(ngModel)]="robotFac.employees" placeholder="employees">
+    </label>
+  </div>
+  <div>
+    <label>city:
+      <input [(ngModel)]="robotFac.city" placeholder="city">
+    </label>
+  </div>
+  <div>
+    <label>coordinates:
+      <input [(ngModel)]="robotFac.coordinates.lat" placeholder="Lat">
+      <input [(ngModel)]="robotFac.coordinates.lon" placeholder="Lon">
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

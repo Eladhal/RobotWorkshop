@@ -1,0 +1,23 @@
+<!--<h2>{{ robotFac.branchName| uppercase}}</h2>-->
+<!--<div><span>Id: </span>{{robotFac.id}}</div>-->
+<!--<div><span>City: </span>{{robotFac.city}}</div>-->
+<!--<div><span>Manager Name: </span>{{robotFac.managerName}}</div>-->
+<!--<div><span>Number Of Employees: </span>{{robotFac.employees}}</div>-->
+<!--<div><span>Coordinate: </span>{{robotFac.coordinates.lat+', '+robotFac.coordinates.lon}}</div>-->
+<!--<div>-->
+  <!--<label>Branch Name:-->
+    <!--<input [(ngModel)]="robotFac.branchName" placeholder="name">-->
+  <!--</label>-->
+<!--</div>-->
+
+<h2>My Robot Factories</h2>
+<ul class="robots">
+  <li *ngFor="let robot of robotFac" >
+    <a routerLink="/robot-factory-detail/{{robot.id}}">
+    <span class="badge">{{robot.id}}</span> {{robot.branchName}}
+    </a>
+  </li>
+</ul>
+
+
+
