@@ -1,0 +1,32 @@
+
+<div>
+<h1>Add New RobotFactory</h1>
+</div>
+<div>
+  <label>branchName:
+    <input #branchName  placeholder="branchName">
+  </label>
+</div>
+<div>
+  <label>managerName:
+    <input #managerName  placeholder="managerName">
+  </label>
+</div>
+<div>
+  <label>employees:
+    <input #employees placeholder="employees">
+  </label>
+</div>
+<div>
+  <label>city:
+    <input #city placeholder="city">
+  </label>
+</div>
+<div>
+  <label>coordinates:
+    <input #Lat placeholder="Lat">
+    <input #Lon placeholder="Lon">
+  </label>
+</div>
+<button (click)="AddNewRobot(branchName.value,managerName.value,employees.value,city.value,
+            Lat.value,Lon.value);">Add New</button>

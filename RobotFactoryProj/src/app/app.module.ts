@@ -15,6 +15,7 @@ import { MessagesComponent } from './messages/messages.component';
 import {MessagesService} from "./messages.service";
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddNewRobotFactoryComponent } from './add-new-robot-factory/add-new-robot-factory.component';
 
 
 
@@ -24,7 +25,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RobotFactoryShopComponent,
     RobotFactoryDetailsComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddNewRobotFactoryComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,10 @@ import {of} from 'rxjs/observable/of';
 import {MessagesService} from "./messages.service";
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
 export class RobotFactoryService {
   private robotsUrl = 'api/robots';  // URL to web api
@@ -51,6 +55,13 @@ export class RobotFactoryService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+
+  updateHero(robotFac :RobotFactory):Observable<any> {
+    return this.http.put(this.robotsUrl, robotFac, httpOptions).pipe(
+      tap(_ => this.log(`updated robot factory id=${robotFac.id}`)),
+      catchError(this.handleError<any>('updateRobotFactory'))
+    );
   }
 
 }

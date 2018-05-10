@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import {RobotFactoryService} from "../robot-factory.service";
 import {RobotFactory} from "../RobotFactoryShop";
 
+
 @Component({
   selector: 'app-robot-factory-details',
   templateUrl: './robot-factory-details.component.html',
@@ -11,13 +12,12 @@ import {RobotFactory} from "../RobotFactoryShop";
 })
 export class RobotFactoryDetailsComponent implements OnInit {
 
-  // @Input()robotFact:RobotFactory;
   public robotFac :RobotFactory;
 
   constructor(
     private route: ActivatedRoute,
     private robotFacService: RobotFactoryService,
-    private location: Location,
+    private location: Location
   ) {}
 
   ngOnInit() {
@@ -32,7 +32,11 @@ export class RobotFactoryDetailsComponent implements OnInit {
 
   goBack() :void{
     this.location.back();
+  }
 
+  save():void {
+    this.robotFacService.updateHero(this.robotFac)
+      .subscribe(() => this.goBack());
   }
 
 }
